@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import CardsList from './pages/cards/CardsList';
-import CardDetail from './pages/card/CardDetail';
-import DeckBuilder from './pages/deckBuilder/DeckBuilder';
+import Home from './pages/home/Home';
+import Search from './pages/search/Search';
+import NotFound from './pages/notFound/NotFound';
 
 import './App.css'
 
@@ -11,12 +11,13 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/search">
-                    <Route index element={<CardsList />} />
-                    <Route path=":name" element={<CardDetail />}/>
+                <Route path="/home">
+                    <Route index element={<Home />} />
                 </Route>
-                <Route path="/deck" element={<DeckBuilder />}/>
-                <Route path="*" element={<></>}/>
+                <Route path="/search">
+                    <Route index element={<Search />} />
+                </Route>
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
         </>
     )
